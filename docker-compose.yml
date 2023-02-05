@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+  mongodb:
+    container_name: mongodb-parking-lot
+    image: mongo:5.0.14
+    ports:
+      - 27017:27017
+  api:
+    depends_on:
+      - mongodb
+    container_name: api-parking-lot
+    build: .
+    ports:
+      - 9000:9000
+    environment:
+      - LISTEN_PORT=9000
+      - MONGODB_HOST=mongodb-parking-lot

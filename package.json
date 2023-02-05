@@ -1,0 +1,42 @@
+{
+  "name": "parking-lot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec 'babel-node -r ./node_modules/dotenv-flow/config' src/index.js",
+    "build:clean": "rm -rf build && rm -rf ./src/graphql/nexus-generated && mkdir build",
+    "build": "yarn build:clean && NODE_ENV=production ./node_modules/.bin/babel -d ./build src/",
+    "start": "NODE_ENV=production node build/index.js",
+    "test": "jest",
+    "migrate": "babel-node -r ./node_modules/dotenv-flow/config src/scripts/migration/index.js migrate",
+    "db-sync": "babel-node -r ./node_modules/dotenv-flow/config src/scripts/syncDatabaseTable.js run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gugods/parking-lot.git"
+  },
+  "dependencies": {
+    "dotenv-flow": "^3.1.0",
+    "express": "^4.17.1",
+    "express-gql": "^0.0.11",
+    "graphql": "^15.6.1",
+    "graphql-iso-date": "^3.6.1",
+    "graphql-type-json": "^0.3.2",
+    "make-runnable": "^1.3.6",
+    "mongoose": "^6.6.2",
+    "nexus": "^1.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "jest": "^26.2.2",
+    "nodemon": "^1.19.1",
+    "prettier": "^2.0.5"
+  }
+}

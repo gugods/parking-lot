@@ -1,0 +1,30 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "14"
+        }
+      },
+      "@babel/preset-typescript"
+    ]
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "src": "./src",
+          "config": "./src/config",
+          "resolvers": "./src/graphql/resolvers",
+          "schemas": "./src/graphql/schemas",
+          "graphql/types": "./src/graphql/types",
+          "helpers": "./src/helpers",
+          "models": "./src/models"
+        }
+      }
+    ],
+    ["@babel/plugin-proposal-class-properties"]
+  ]
+}

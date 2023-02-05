@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "config": ["src/config"],
+      "resolvers": ["src/graphql/resolvers"],
+      "schemas": ["src/graphql/schemas"],
+      "helpers": ["src/helpers"],
+      "models": ["src/models"],
+      "graphql/types": ["src/graphql/types"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
