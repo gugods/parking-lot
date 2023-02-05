@@ -2,8 +2,8 @@
 
 ## Build Setup
 
-- Install [GraphiQL] (https://github.com/graphql/graphiql) (optional)
-- Install [Docker] (https://github.com/docker)
+- Install [GraphiQL](https://github.com/graphql/graphiql) (optional)
+- Install [Docker](https://github.com/docker)
 
 ```
 docker-compose up
@@ -26,7 +26,7 @@ docker exec -it parking-lot bash
 
 ## GraphQL Examples
 
-#GraphQL endpoint URL http://127.0.0.1:9000
+GraphQL endpoint URL http://127.0.0.1:9000
 
 ```
 mutation createParkingLot($name: String!, $floor: Int!, $slots: SlotsAttribute) {
@@ -109,7 +109,7 @@ query getStatusOfParking {
 query getRegistrationPlateNumberByCarSize($carSize: CarSizeType!) {
   getRegistrationPlateNumberByCarSize(carSize: $carSize) {
     status
-  	result {
+    result {
       plateNumber
       carSize
       total
@@ -125,7 +125,7 @@ query getRegistrationPlateNumberByCarSize($carSize: CarSizeType!) {
 query getRegistrationAllocatedSlotByCarSize($carSize: CarSizeType!) {
   getRegistrationAllocatedSlotByCarSize(carSize: $carSize) {
     status
-  	result {
+    result {
       plateNumber
       carSize
       slotId
